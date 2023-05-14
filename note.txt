@@ -1,0 +1,103 @@
+Server Creation
+---------------
+
+1- npm init
+2- install express : npm i express 
+
+steps
+-----
+
+1-import express
+2-create app using express
+3-setting port to run the app (3000)
+
+JWT(JSON web token)
+------------------
+
+-user authentication
+-jsonwebtoken - library used to generate tokens
+-sign() - method used to generate token
+-verify() - method used to token verification
+
+token verification
+------------------
+
+
+MiddleWares
+-----------
+
+-its a function with 3 arguments (req ,res ,next)
+-have the capacity to control the http request in node
+-two types of MiddleWares
+   1. application specifier MiddleWares - it happens before all the http methods
+   2. router specific MiddleWares - can apply only on specific requests
+
+-next() -method used inside MiddleWare to continue the node execution 
+
+
+MongoDB
+-------
+
+1-to see the databases
+         -show dbs
+
+2-to open a database
+         -use (databasename)
+
+3-to list collections    
+         -show collections
+
+4-to show the datas inside a collection
+         -db.(collectionname).find()
+
+5-to show single data inside a collection
+         -db.(collectionname).findOne({key:value})
+         eg: db.users.findOne({acno:1000})            -present     - full data of that object
+                                                      -not present -null                      
+
+6-to insert new data
+         -db.(collectionname).insertOne({eys:values})
+
+7-to find datas using a perticular condition
+         -db.(collectionname).find({condition}) 
+          condition create using query selecting operators     
+
+         eg: to access datas which have 40000 greater balance
+            db.users.find({balance:{gt:40000}})                                                          
+
+8-to delete a data from collection
+         -db.(collectionname).deleteOne({key:value})    -delete count =0
+
+9-to update
+         -db.(collectionname).updateOne({oldkey:oldValue},{$set:{newkey:newvalue}})
+         eg: db.users.updateOne({username:anu},{$set{username:anu v}})                   
+
+database Server integration(mdb node connection)
+---------------------------  27017  3000
+mongoose   - library used to integrate MongoDB and Server
+           - npm i moongose
+
+connect()  - used to create connection string
+
+model()    - method used to create model
+
+
+steps
+-----
+
+1-import mongoose
+2-connection string Creation
+3-model Creation for collection (model name is singular form of collection name)
+
+
+asynchronous method handling in js
+----------------------------------
+promis  - resolve  then()
+        - reject catch()
+
+
+CORS(cross origin resource sharing)
+-----------------------------------
+library used to integrate frontend with node
+                              4200   -  3000
+                              
